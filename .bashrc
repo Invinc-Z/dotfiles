@@ -119,34 +119,11 @@ fi
 set PS1
 export PS1='\[\e[32;40m\]\u\[\e[33;40m\]@\[\e[36;40m\]\h\[\e[35;40m\]:\[\e[31;40m\]\W\[\e[00m\]\$ '
 
-#使用man查看英文man手册
-alias man='man -M /usr/share/man'
-# 设置中文man别名
-alias cman='man -M /usr/share/man/zh_CN'
-
 # Add TeX Live to the PATH, MANPATH, INFOPATH
 export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
 export MANPATH=/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH
 
-# valgrind内存泄漏检测
-alias vgr='valgrind \
-    --tool=memcheck \
-    --leak-check=full \
-    --show-leak-kinds=all \
-    --track-origins=yes'
-
-# 输出到文件
-alias vgrl='valgrind \
-    --tool=memcheck \
-    --leak-check=full \
-    --show-leak-kinds=all \
-    --track-origins=yes \
-    --log-file=valgrind.log'
-
 # Add Neovim from /opt/nvim to PATH
 export PATH="/opt/nvim:$PATH"
 
-# 切换到快捷目录
-alias cdsnip='cd ~/.local/share/nvim/lazy/friendly-snippets/snippets/'
-alias cdw='cd ~/coding-exercises/APUE.3e/'
